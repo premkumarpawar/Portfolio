@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premkumar Pawar - Frontend Developer | About</title>
+    <meta name="description" content="Learn more about Premkumar Pawar, a frontend developer with expertise in building responsive and user-friendly websites." />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premkumar Pawar - Frontend Developer | About">
+    <meta property="og:description" content="Learn more about Premkumar Pawar, a frontend developer with expertise in building responsive and user-friendly websites.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* Global styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+        }
+
+        :root {
+            --width: 90%;
+            --bg: #0f051e;
+            --primary-color: #4200fc;
+            --secondary-color: #f901fc;
+            --text-color: #fff;
+            --card-bg: #1a0c27;
+            --highlight-color: #ff7c00;
+        }
+
+        body {
+            background: var(--bg);
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            border-radius: 30px;
+            color: #fff;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            cursor: pointer;
+        }
+
+        /* Navbar */
+        header nav {
+            width: var(--width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding-top: 20px;
+            position: relative;
+            z-index: 100;
+        }
+
+        header nav .logo {
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header nav .nav-links {
+            transition: all 0.3s;
+        }
+
+        header nav .nav-links a {
+            color: var(--text-color);
+            margin-left: 50px;
+            position: relative;
+        }
+
+        header nav .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            transition: 0.3s;
+        }
+
+        header nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* About Section */
+        .about-section {
+            width: var(--width);
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .about-section h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--highlight-color);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-section h2:hover {
+            transform: scale(1.1);
+        }
+
+        .about-content {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card h3 {
+            color: var(--highlight-color);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsive for Skills Section */
+        @media (max-width: 767px) {
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-section h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* Scroll Animation for the Content */
+        .about-content {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <a href="#" class="logo">Portfolio</a>
+                <div class="nav-links">
+                    <a href="index.html" class="back-btn">Home</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="services.html">Services</a>
+                    <a href="Project.html">Projects</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="https://www.linkedin.com/in/premkumar-pawar/" class="btn">Follow LinkedIn</a>
+                <button role="menu" aria-label="Toggle Menu" class="menu" onclick="event.currentTarget.classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+                <p>Hello! I'm Premkumar Pawar, a passionate and dedicated Frontend Developer. I specialize in creating beautiful, responsive, and interactive websites and applications that provide users with an intuitive experience. I have a deep understanding of HTML, CSS, JavaScript, and React, and I continuously strive to stay updated with the latest trends and best practices in web development.</p>
+
+                <p>With a strong foundation in frontend technologies, I love working on projects that allow me to use my skills to solve real-world problems and improve user experiences. Whether it's building a portfolio website or an enterprise-level application, I take pride in delivering high-quality work.</p>
+
+                <p>My goal is to create seamless digital experiences by combining design and functionality. I'm always excited to take on new challenges and collaborate with others to build something amazing.</p>
+            </div>
+
+            <div class="skills">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <p>Experienced in HTML5, CSS3, JavaScript, and React, building interactive and responsive user interfaces.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Backend Development</h3>
+                    <p>Proficient in server-side technologies such as Node.js, PHP, and Java for developing full-stack applications.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Database Management</h3>
+                    <p>Experienced in working with MySQL, MongoDB, and other databases to build and manage data-driven applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

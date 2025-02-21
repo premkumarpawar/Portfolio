@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premkumar Pawar - Frontend Developer | Skills</title>
+    <meta name="description" content="Explore the skills and technologies I excel in as a frontend developer." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premkumar Pawar - Frontend Developer | Skills">
+    <meta property="og:description" content="Explore the skills and technologies I excel in as a frontend developer.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/skills">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" /> 
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* Global styles from the Home Page (Index Page) */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+        :root {
+            --width: 90%;
+            --bg: #0f051e;
+        }
+
+        body {
+            background: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            background: linear-gradient(to left, #4200fc, #f901fc);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #f901fc, #4200fc);
+            cursor: pointer;
+        }
+
+        /* Navbar */
+        header nav {
+            width: var(--width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding-top: 20px;
+            z-index: 100;
+            position: relative;
+        }
+
+        header nav .logo {
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(to left, #4200fc, #f901fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .nav-links {
+            transition: all 0.3s;
+        }
+
+        header nav .nav-links a {
+            color: #fff;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        header nav .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to left, #4200fc, #f901fc);
+            transition: 0.3s;
+        }
+
+        header nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            width: var(--width);
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .skills-section h2 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background-color: #1a0c27;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsive for Skills Section */
+        @media (max-width: 767px) {
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <a href="#" class="logo">Portfolio</a>
+                <div class="nav-links">
+                    <a href="index.html" class="back-btn">Home</a>
+                    <a href="skills.html" class="active">Skills</a>
+                    <a href="services.html">Services</a>
+                    <a href="Project.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="https://www.linkedin.com/in/premkumar-pawar/" class="btn">Follow LinkedIn</a>
+                <button role="menu" aria-label="Toggle Menu" class="menu" onclick="event.currentTarget.classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2>My Skills</h2>
+
+            <!-- Frontend Skills -->
+            <div class="skills">
+                <h3 style="color: #fff; text-align: center; grid-column: span 3;">Frontend Development</h3>
+
+                <!-- Skill 1: HTML -->
+                <div class="skill-card">
+                    <img src="logo/htmllogo.jpg" alt="HTML Logo" />
+                    <h3>HTML</h3>
+                    <p>Proficient in HTML5, building semantic and accessible web pages with clean markup.</p>
+                </div>
+
+                <!-- Skill 2: CSS -->
+                <div class="skill-card">
+                    <img src="logo/csslogo.jpg" alt="CSS Logo" />
+                    <h3>CSS</h3>
+                    <p>Strong experience with CSS3, including Flexbox, Grid, animations, and responsive design.</p>
+                </div>
+
+                <!-- Skill 3: JavaScript -->
+                <div class="skill-card">
+                    <img src="logo/javascriptlogo.jpg" alt="JavaScript Logo" />
+                    <h3>JavaScript</h3>
+                    <p>Skilled in JavaScript, both Vanilla JS and ES6+ features, for dynamic web functionalities.</p>
+                </div>
+
+                <!-- Skill 4: React -->
+                <div class="skill-card">
+                    <img src="F:\portfolio\portfolio\logo\th.jpg" alt="React Logo" />
+                    <h3>React</h3>
+                    <p>Experience in developing dynamic, reusable components using React and managing state with hooks.</p>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="skills">
+                <h3 style="color: #fff; text-align: center; grid-column: span 3;">Backend Development</h3>
+
+                <!-- Skill 5: Java -->
+                <div class="skill-card">
+                    <img src="logo/javalogo.jpg" alt="Java Logo" />
+                    <h3>Java</h3>
+                    <p>Proficient in Java, with experience in building scalable backend applications using Java frameworks and tools.</p>
+                </div>
+
+                <!-- Skill 6: PHP -->
+                <div class="skill-card">
+                    <img src="logo/phplogo.jpg" alt="PHP Logo" />
+                    <h3>PHP</h3>
+                    <p>Experience with PHP in building dynamic websites and web applications.</p>
+                </div>
+
+                <!-- Skill 7: Python -->
+                <div class="skill-card">
+                    <img src="logo/pythonlogo.jpg" alt="Python Logo" />
+                    <h3>Python</h3>
+                    <p>Proficient in Python, with experience in backend development, scripting, and data analysis.</p>
+                </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="skills">
+                <h3 style="color: #fff; text-align: center; grid-column: span 3;">Database</h3>
+
+                <!-- Skill 8: MySQL -->
+                <div class="skill-card">
+                    <img src="logo/mysqllogo.jpg" alt="MySQL Logo" />
+                    <h3>MySQL</h3>
+                    <p>Experience with MySQL for database management and integrating it into web applications.</p>
+                </div>
+
+                <!-- Skill 9: MongoDB -->
+                <div class="skill-card">
+                    <img src="logo/mongologo.jpg" alt="MongoDB Logo" />
+                    <h3>MongoDB</h3>
+                    <p>Skilled in NoSQL databases like MongoDB, focusing on document-based data storage.</p>
+                </div>
+            </div>
+
+            <!-- Web Services -->
+            <div class="skills">
+                <h3 style="color: #fff; text-align: center; grid-column: span 3;">Web Services</h3>
+
+                <!-- Skill 10: Figma -->
+                <div class="skill-card">
+                    <img src="F:\portfolio\portfolio\logo\figmalogo.jpg" alt="Figma Logo" />
+                    <h3>Figma</h3>
+                    <p>Proficient in using Figma for designing high-fidelity prototypes, UI/UX design, and collaborating in real-time with team members.</p>
+                </div>
+
+                <!-- Skill 11: REST API -->
+                <div class="skill-card">
+                    <img src="logo/restapilogo.jpg" alt="REST API Logo" />
+                    <h3>REST API</h3>
+                    <p>Experience in building and consuming REST APIs for web and mobile applications.</p>
+                </div>
+
+                <!-- Skill 12: WordPress -->
+                <div class="skill-card">
+                    <img src="logo/wordpresslogo.jpg" alt="WordPress Logo" />
+                    <h3>WordPress</h3>
+                    <p>Familiar with building websites using WordPress and customizing themes and plugins.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
