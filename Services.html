@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premkumar Pawar - Frontend Developer | Services</title>
+    <meta name="description" content="Explore the services I offer as a frontend developer." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premkumar Pawar - Frontend Developer | Services">
+    <meta property="og:description" content="Explore the services I offer as a frontend developer.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/services">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" /> 
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* Global styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+        }
+
+        :root {
+            --width: 90%;
+            --bg: #0f051e;
+            --primary-color: #4200fc;
+            --secondary-color: #f901fc;
+            --text-color: #fff;
+            --card-bg: #1a0c27;
+        }
+
+        body {
+            background: var(--bg);
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            border-radius: 30px;
+            color: #fff;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            cursor: pointer;
+        }
+
+        /* Navbar */
+        header nav {
+            width: var(--width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding-top: 20px;
+            position: relative;
+            z-index: 100;
+        }
+
+        header nav .logo {
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header nav .nav-links {
+            transition: all 0.3s;
+        }
+
+        header nav .nav-links a {
+            color: var(--text-color);
+            margin-left: 50px;
+            position: relative;
+        }
+
+        header nav .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            transition: 0.3s;
+        }
+
+        header nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Services Section */
+        .services-section {
+            width: var(--width);
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .services-section h2 {
+            color: var(--text-color);
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card h3 {
+            color: var(--text-color);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsive for Services Section */
+        @media (max-width: 767px) {
+            .services {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <a href="#" class="logo">Portfolio</a>
+                <div class="nav-links">
+                    <a href="index.html" class="back-btn">Home</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="services.html" class="active">Services</a>
+                    <a href="Project.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="https://www.linkedin.com/in/premkumar-pawar/" class="btn">Follow LinkedIn</a>
+                <button role="menu" aria-label="Toggle Menu" class="menu" onclick="event.currentTarget.classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Services Section -->
+        <div class="services-section">
+            <h2>My Services</h2>
+
+            <!-- Service 1: Frontend Development -->
+            <div class="services">
+                <div class="service-card">
+                    <h3>Frontend Development</h3>
+                    <p>Building user-friendly, responsive websites using HTML, CSS, JavaScript, and React.js.</p>
+                </div>
+
+                <!-- Service 2: Web Design -->
+                <div class="service-card">
+                    <h3>Web Design</h3>
+                    <p>Crafting stunning UI/UX designs and prototypes with Figma to enhance user experiences.</p>
+                </div>
+
+                <!-- Service 3: Website Optimization -->
+                <div class="service-card">
+                    <h3>Website Optimization</h3>
+                    <p>Optimizing websites for faster load times, improved performance, and better SEO.</p>
+                </div>
+            </div>
+
+            <!-- Service 4: Backend Development -->
+            <div class="services">
+                <div class="service-card">
+                    <h3>Backend Development</h3>
+                    <p>Developing scalable backend systems with Node.js, Java, and Python for data management.</p>
+                </div>
+
+                <!-- Service 5: API Development -->
+                <div class="service-card">
+                    <h3>API Development</h3>
+                    <p>Building robust and secure REST APIs for integration with various services and applications.</p>
+                </div>
+
+                <!-- Service 6: CMS Development -->
+                <div class="service-card">
+                    <h3>CMS Development</h3>
+                    <p>Creating customizable CMS solutions, including WordPress theme and plugin development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
