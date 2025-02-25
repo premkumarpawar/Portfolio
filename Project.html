@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premkumar Pawar - Frontend Developer | Projects</title>
+    <meta name="description" content="Explore the projects I have worked on as a frontend developer." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premkumar Pawar - Frontend Developer | Projects">
+    <meta property="og:description" content="Explore the projects I have worked on as a frontend developer.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/projects">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* Your existing CSS here */
+        /* Global styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+        }
+
+        :root {
+            --width: 90%;
+            --bg: #1f1f2b;
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --text-color: #fff;
+            --card-bg: #2c3e50;
+            --highlight-color: #ff7c00;
+            --btn-hover: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            --font-primary: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            scroll-behavior: smooth;
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            border-radius: 30px;
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: var(--btn-hover);
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
+
+        /* Navbar */
+        header nav {
+            width: var(--width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding-top: 20px;
+            position: relative;
+            z-index: 100;
+        }
+
+        header nav .logo {
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header nav .nav-links {
+            transition: all 0.3s;
+        }
+
+        header nav .nav-links a {
+            color: var(--text-color);
+            margin-left: 50px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        header nav .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            transition: 0.3s;
+        }
+
+        header nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .menu {
+            display: none;
+            outline: none;
+            border: none;
+            width: 60px;
+            height: 60px;
+            margin-right: -17px;
+            background: transparent;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu span {
+            height: 2.6px;
+            width: 25px;
+            transition: all 0.2s;
+            display: block;
+            margin-bottom: 5px;
+            background: #ddd;
+        }
+
+        .menu.active span:nth-of-type(2) {
+            opacity: 0;
+            width: 0px;
+        }
+
+        .menu.active span:nth-of-type(1) {
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+
+        .menu.active span:nth-of-type(3) {
+            transform: translateY(3px) rotate(-45deg);
+            transform-origin: left;
+        }
+
+        @media (max-width: 767px) {
+            header .menu {
+                display: inline-flex;
+            }
+
+            .skills {
+                gap: 20px;
+                padding-top: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            header nav .nav-links {
+                display: none;
+            }
+
+            header:has(.menu.active) .nav-links {
+                position: fixed;
+                top: 0;
+                flex-direction: column;
+                display: flex;
+                gap: 10px;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                padding-top: 50px;
+                min-height: 60vh;
+                background: var(--bg);
+                z-index: 2;
+            }
+            header nav .nav-links a {
+                margin-left: 24px;
+                padding: 10px 0;
+            }
+
+            .skills-section h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Projects Section */
+        .projects-section {
+            width: var(--width);
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .projects-section h2 {
+            color: var(--highlight-color);
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            transform: scale(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: var(--text-color);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: #ddd;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .project-card ul {
+            color: #ddd;
+            font-size: 16px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-card ul li {
+            margin: 5px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsive for Projects Section */
+        @media (max-width: 767px) {
+            .project-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .menu {
+                display: flex;
+            }
+
+            header nav .nav-links {
+                display: none;
+            }
+        }
+
+        /* Enhancing responsiveness for smaller screens */
+        @media (max-width: 480px) {
+            header nav .logo {
+                font-size: 28px;
+            }
+
+            header nav .nav-links a {
+                margin-left: 20px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .projects-section h2 {
+                font-size: 30px;
+            }
+
+            .project-card h3 {
+                font-size: 20px;
+            }
+
+            .project-card p {
+                font-size: 14px;
+            }
+
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <a href="#" class="logo">Portfolio</a>
+                <div class="nav-links">
+                    <a href="index.html" class="back-btn">Home</a>
+                    <a href="Skill.html">Skills</a>
+                    <a href="Services.html">Services</a>
+                    <a href="Project.html" class="active">Projects</a>
+                    <a href="About.html">About</a>
+                    <a href="Contact.html">Contact</a>
+                </div>
+                <!-- Hamburger Menu Button -->
+                <button role="menu" aria-label="Toggle Menu" class="menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2>My Projects</h2>
+            <div class="project-cards" id="project-cards-container">
+                <!-- Project cards will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div style="text-align: center; padding: 20px;">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            {
+                title: "Mobile Selling Web Application",
+                technologies: "PHP | HTML | CSS | JavaScript",
+                description: "Developed a comprehensive web application for mobile phone sales, allowing users to browse, purchase, and manage inventory, along with features like secure login, shopping cart, and product search functionality."
+            },
+            {
+                title: "Student Management System",
+                technologies: "Java | MySQL | HTML | CSS",
+                description: "Developed a student management system for managing student records, including adding, deleting, updating, and viewing student details. The system also generates reports based on student performance."
+            },
+            {
+                title: "Electricity Billing System",
+                technologies: "Java | MySQL",
+                description: "Developed a Java-based application to automate the management of electricity billing processes, including unit consumption and payment amounts. The system also allows consumers to access billing information and make online payments."
+            }
+        ];
+
+        function loadProjects() {
+            const container = document.getElementById("project-cards-container");
+
+            projects.forEach(project => {
+                const card = document.createElement("div");
+                card.classList.add("project-card");
+                card.innerHTML = `
+                    <h3>${project.title}</h3>
+                    <p><strong>Technologies:</strong> ${project.technologies}</p>
+                    <p><strong>Description:</strong> ${project.description}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        loadProjects();
+
+        // Toggle Menu Functionality
+        function toggleMenu() {
+            const menuButton = document.querySelector('.menu');
+            const navLinks = document.querySelector('.nav-links');
+            menuButton.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

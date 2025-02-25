@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premkumar Pawar - Skills | Portfolio</title>
+    <meta name="description" content="Explore the skills of Premkumar Pawar, a passionate Frontend Developer." />
+    <meta property="og:title" content="Premkumar Pawar - Skills | Portfolio">
+    <meta property="og:description" content="Explore the skills of Premkumar Pawar, a passionate Frontend Developer.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* Global Reset */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+        :root {
+            --width: 90%;
+            --bg: #0f051e;
+            --text-light: #fff;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #07021a;
+            padding: 20px 0;
+        }
+
+        header nav {
+            width: var(--width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        header .logo {
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(to left, #4200fc, #f901fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        header .nav-links a {
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        header .nav-links a:hover {
+            color: #f901fc;
+        }
+
+        header .menu {
+            display: none;
+            flex-direction: column;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        header .menu span {
+            background-color: #fff;
+            height: 3px;
+            width: 25px;
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 70px 0;
+            text-align: center;
+            width: var(--width);
+            margin: auto;
+        }
+
+        .skills-section h2 {
+            color: var(--text-light);
+            font-size: clamp(24px, 6vw, 40px);
+            margin-bottom: 40px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skills h3 {
+            grid-column: span 3;
+            font-size: clamp(18px, 5vw, 28px);
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .skill-card {
+            background-color: #1e0c32;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--text-light);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Back to Home Button */
+        .back-to-home-btn {
+            display: inline-block;
+            background: linear-gradient(to left, #4200fc, #f901fc);
+            padding: 15px 35px;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            font-size: 18px;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+
+        .back-to-home-btn:hover {
+            background: linear-gradient(to right, #f901fc, #4200fc);
+            cursor: pointer;
+        }
+
+        /* Mobile Menu */
+        .menu {
+            display: none;
+            outline: none;
+            border: none;
+            width: 60px;
+            height: 60px;
+            margin-right: -17px;
+            background: transparent;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu span {
+            height: 2.6px;
+            width: 25px;
+            transition: all 0.2s;
+            display: block;
+            margin-bottom: 5px;
+            background: #ddd;
+        }
+
+        .menu.active span:nth-of-type(2) {
+            opacity: 0;
+            width: 0px;
+        }
+
+        .menu.active span:nth-of-type(1) {
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+
+        .menu.active span:nth-of-type(3) {
+            transform: translateY(3px) rotate(-45deg);
+            transform-origin: left;
+        }
+
+        @media (max-width: 767px) {
+            header .menu {
+                display: inline-flex;
+            }
+
+            .skills {
+                gap: 20px;
+                padding-top: 20px;
+                grid-template-columns: 1fr;
+            }
+            header nav .nav-links a {
+                margin-left: 24px;
+                padding: 10px 0;
+            }
+
+            header .nav-links {
+                display: none;
+            }
+
+            header:has(.menu.active) .nav-links {
+                position: fixed;
+                top: 0;
+                flex-direction: column;
+                display: flex;
+                gap: 10px;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                padding-top: 50px;
+                min-height: 60vh;
+                background: var(--bg);
+                z-index: 2;
+            }
+
+            .skills-section h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Navigation Menu -->
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Skill.html" class="active">Skills</a>
+                <a href="Services.html">Services</a>
+                <a href="Project.html">Projects</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+            <button role="menu" aria-label="Toggle Menu" class="menu" onclick="event.currentTarget.classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+        <h2>My Skills</h2>
+
+        <!-- Frontend Development -->
+        <div class="skills">
+            <h3 style="grid-column: span 3; color: var(--text-light); text-align: center;">Frontend Development</h3>
+
+            <!-- Skill 1: HTML -->
+            <div class="skill-card">
+                <img src="logo/htmllogo.jpg" alt="HTML Logo" />
+                <h3>HTML</h3>
+                <p>Expert in HTML5, building semantic and accessible web pages with clean markup.</p>
+            </div>
+
+            <!-- Skill 2: CSS -->
+            <div class="skill-card">
+                <img src="logo/csslogo.jpg" alt="CSS Logo" />
+                <h3>CSS</h3>
+                <p>Proficient in CSS3, including Flexbox, Grid, animations, and responsive design.</p>
+            </div>
+
+            <!-- Skill 3: JavaScript -->
+            <div class="skill-card">
+                <img src="logo/javascriptlogo.jpg" alt="JavaScript Logo" />
+                <h3>JavaScript</h3>
+                <p>Skilled in JavaScript, both Vanilla JS and ES6+ features, for dynamic web functionalities.</p>
+            </div>
+
+            <!-- Skill 4: React -->
+            <div class="skill-card">
+                <img src="logo/th.jpg" alt="React Logo" />
+                <h3>React</h3>
+                <p>Experience in developing dynamic, reusable components using React and managing state with hooks.</p>
+            </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="skills">
+            <h3 style="grid-column: span 3; color: var(--text-light); text-align: center;">Backend Development</h3>
+
+            <!-- Skill 5: Java -->
+            <div class="skill-card">
+                <img src="logo/javalogo.jpg" alt="Java Logo" />
+                <h3>Java</h3>
+                <p>Experience with building scalable backend applications using Java frameworks.</p>
+            </div>
+
+            <!-- Skill 6: PHP -->
+            <div class="skill-card">
+                <img src="logo/phplogo.jpg" alt="PHP Logo" />
+                <h3>PHP</h3>
+                <p>Experience in building dynamic websites and web applications using PHP.</p>
+            </div>
+
+            <!-- Skill 7: Python -->
+            <div class="skill-card">
+                <img src="logo/pythonlogo.jpg" alt="Python Logo" />
+                <h3>Python</h3>
+                <p>Skilled in Python for backend development and scripting tasks.</p>
+            </div>
+        </div>
+
+        <!-- Database and Tools Section -->
+        <div class="skills">
+            <h3 style="grid-column: span 3; color: var(--text-light); text-align: center;">Database & Tools</h3>
+
+            <!-- Skill 8: MySQL -->
+            <div class="skill-card">
+                <img src="logo/mysqllogo.jpg" alt="MySQL Logo" />
+                <h3>MySQL</h3>
+                <p>Proficient in using MySQL for designing and managing databases.</p>
+            </div>
+
+            <!-- Skill 9: Git -->
+            <div class="skill-card">
+                <img src="logo/gitlogo.jpg" alt="Git Logo" />
+                <h3>Git</h3>
+                <p>Experience in version control with Git and collaborating through GitHub.</p>
+            </div>
+
+            <!-- Skill 10: Docker -->
+            <div class="skill-card">
+                <img src="logo/dockerlogo.jpg" alt="Docker Logo" />
+                <h3>Docker</h3>
+                <p>Experience with Docker for containerization and efficient application deployment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home-btn">Back to Home</a>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
